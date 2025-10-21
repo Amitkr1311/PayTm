@@ -1,7 +1,12 @@
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
+import { MONGO_URL } from "./config.js";
 
-mongoose.connect("mongodb+srv://1311amitkr:vGGLtfR3sokm2aEy@cluster0.5ghknrp.mongodb.net/paytm");
+// mongoose.connect("mongodb+srv://1311amitkr:vGGLtfR3sokm2aEy@cluster0.5ghknrp.mongodb.net/paytm");
+
+mongoose.connect(MONGO_URL)
+  .then(() => console.log("Connected to MongoDB successfully"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 const userSchema = new Schema({
     username:{

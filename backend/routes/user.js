@@ -9,7 +9,7 @@
 import express from "express";
 import { z } from "zod";
 import { User, Account } from "../db.js";
-import  JWT_SECRET from "../config.js";
+import  { JWT_SECRET } from "../config.js";
 import jwt from "jsonwebtoken";
 import  authMiddleware  from "../middleware.js";
 
